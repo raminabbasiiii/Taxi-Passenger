@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="6dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="6dp"
+    android:background="@color/card_view_background"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="4dp"
+    app:contentPadding="4dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/driver_picture_registered"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/passenger"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/img_show_place_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/reserve_trip_activity_background"
+            android:src="@drawable/place"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/driver_picture_registered"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_driver_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tv_driver"
+            android:textColor="@color/text_view_in_registered_trip_recycler"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_driver_name_registered"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/driver_picture_registered" />
+
+        <TextView
+            android:id="@+id/tv_driver_name_registered"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:gravity="start"
+            android:text="@string/tv_driver_name"
+            android:textColor="@color/text_input_layout"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_driver_registered"
+            app:layout_constraintTop_toBottomOf="@+id/driver_picture_registered" />
+
+        <TextView
+            android:id="@+id/tv_car_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/tv_car"
+            android:textColor="@color/text_view_in_registered_trip_recycler"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_car_model_registered"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_driver_registered" />
+
+        <TextView
+            android:id="@+id/tv_car_model_registered"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:gravity="start"
+            android:text="@string/tv_car_model"
+            android:textColor="@color/text_input_layout"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_car_registered"
+            app:layout_constraintTop_toBottomOf="@+id/tv_driver_name_registered" />
+
+
+        <TextView
+            android:id="@+id/tv_origin_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/tv_origin"
+            android:textColor="@color/text_input_layout"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_to"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_car_registered" />
+
+        <TextView
+            android:id="@+id/tv_to_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:gravity="start"
+            android:text="@string/tv_to"
+            android:textColor="@color/text_view_in_registered_trip_recycler"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_destination_registered"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_origin_registered"
+            app:layout_constraintTop_toBottomOf="@+id/tv_car_model_registered" />
+
+        <TextView
+            android:id="@+id/tv_destination_registered"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:gravity="start"
+            android:text="@string/tv_destination"
+            android:textColor="@color/text_input_layout"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_to_registered"
+            app:layout_constraintTop_toBottomOf="@+id/tv_car_model_registered" />
+
+        <TextView
+            android:id="@+id/tv_date_time_movement_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/tv_time_doing_trips"
+            android:textColor="@color/text_view_in_registered_trip_recycler"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_date_movement_registered"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_origin_registered" />
+
+        <TextView
+            android:id="@+id/tv_date_movement_registered"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:gravity="start"
+            android:text="@string/tv_date_movement"
+            android:textColor="@color/text_input_layout"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_date_time_movement_registered"
+            app:layout_constraintTop_toBottomOf="@+id/tv_to_registered" />
+
+
+        <TextView
+            android:id="@+id/tv_distance_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/tv_distance"
+            android:textColor="@color/text_view_in_registered_trip_recycler"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_number_distance_registered"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_date_time_movement_registered" />
+
+        <TextView
+            android:id="@+id/tv_number_distance_registered"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:gravity="start"
+            android:text="@string/tv_number_distance"
+            android:textColor="@color/text_input_layout"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_distance_registered"
+            app:layout_constraintTop_toBottomOf="@+id/tv_date_movement_registered" />
+
+        <TextView
+            android:id="@+id/tv_cost_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/tv_cost_registered"
+            android:textColor="@color/text_view_in_registered_trip_recycler"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_money_registered"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_distance_registered" />
+
+        <TextView
+            android:id="@+id/tv_money_registered"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:gravity="start"
+            android:text="@string/tv_money"
+            android:textColor="@color/text_input_layout"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_cost_registered"
+            app:layout_constraintTop_toBottomOf="@+id/tv_number_distance_registered" />
+
+        <TextView
+            android:id="@+id/tv_phone_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="23dp"
+            android:text="@string/tv_mobile"
+            android:textColor="@color/text_view_in_registered_trip_recycler"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_mobile_registered"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cost_registered" />
+
+        <TextView
+            android:id="@+id/tv_mobile_registered"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:gravity="start"
+            android:text="@string/tv_trip_id"
+            android:textColor="@color/text_input_layout"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_phone_registered"
+            app:layout_constraintTop_toBottomOf="@+id/tv_money_registered" />
+
+        <ImageButton
+            android:id="@+id/btn_call_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/card_view_background"
+            android:src="@drawable/call"
+            android:textColor="@color/text_input_layout"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_cancel_trip_registered"
+            app:layout_constraintTop_toBottomOf="@+id/tv_trip_id_registered" />
+
+        <TextView
+            android:id="@+id/tv_trip_code_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/tv_trip_number"
+            android:textColor="@color/text_view_in_registered_trip_recycler"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_trip_id_registered"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_phone_registered" />
+
+        <TextView
+            android:id="@+id/tv_trip_id_registered"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:gravity="start"
+            android:text="@string/tv_trip_id"
+            android:textColor="@color/text_input_layout"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_trip_code_registered"
+            app:layout_constraintTop_toBottomOf="@+id/tv_mobile_registered"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageButton
+            android:id="@+id/btn_cancel_trip_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/card_view_background"
+            android:src="@drawable/cancel"
+            android:textColor="@color/text_input_layout"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_call_registered"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_trip_code_registered" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

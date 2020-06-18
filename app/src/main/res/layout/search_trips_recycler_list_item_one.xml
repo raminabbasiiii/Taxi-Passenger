@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="10dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:background="@color/card_view_background"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/search_trips_constraint">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/et_origin_layout"
+            style="@style/TextInputLayout"
+            android:theme="@style/TextInputLayoutTheme"
+            app:hintTextAppearance="@style/TextInputLayoutHint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/et_origin"
+                style="@style/EditText"
+                android:hint="@string/et_origin"
+                android:inputType="text" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <ImageButton
+            android:id="@+id/origin_imgButton"
+            style="@style/ImageButtonSearchActivity"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/add_location"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/et_origin_layout"
+            app:layout_constraintTop_toTopOf="@+id/et_origin_layout"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/et_destination_layout"
+            style="@style/TextInputLayout"
+            android:theme="@style/TextInputLayoutTheme"
+            app:hintTextAppearance="@style/TextInputLayoutHint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_origin_layout">
+
+            <EditText
+                android:id="@+id/et_destination"
+                style="@style/EditText"
+                android:hint="@string/et_destination"
+                android:inputType="text" />
+        </android.support.design.widget.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/destination_imgButton"
+            style="@style/ImageButtonSearchActivity"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/add_location"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/et_destination_layout"
+            app:layout_constraintTop_toTopOf="@+id/et_destination_layout"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/et_date_layout"
+            style="@style/TextInputLayout"
+            android:theme="@style/TextInputLayoutTheme"
+            app:hintTextAppearance="@style/TextInputLayoutHint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_destination_layout">
+
+            <EditText
+                android:id="@+id/et_date"
+                style="@style/EditText"
+                android:focusable="false"
+                android:hint="@string/et_date"
+                android:inputType="date" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <ImageButton
+            android:id="@+id/date_imgButton"
+            style="@style/ImageButtonSearchActivity"
+            android:layout_width="38dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/date"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/et_date_layout"
+            app:layout_constraintTop_toTopOf="@+id/et_date_layout"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/et_time_layout"
+            style="@style/TextInputLayout"
+            android:theme="@style/TextInputLayoutTheme"
+            app:hintTextAppearance="@style/TextInputLayoutHint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_date_layout">
+
+            <EditText
+                android:id="@+id/et_time"
+                style="@style/EditText"
+                android:focusable="false"
+                android:hint="@string/et_time"
+                android:inputType="time" />
+        </android.support.design.widget.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/time_imgButton"
+            style="@style/ImageButtonSearchActivity"
+            android:src="@drawable/time"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/et_time_layout"
+            app:layout_constraintTop_toTopOf="@+id/et_time_layout"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btn_search_trips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/btn_search_trips"
+            android:gravity="center"
+            android:text="@string/btn_search_trips"
+            android:textColor="@color/search_trips_constraint_background"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_time_layout"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

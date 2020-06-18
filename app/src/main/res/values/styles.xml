@@ -1,0 +1,127 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+
+    </style>
+
+    <style name="NavigationViewTextStyle" parent="Base.TextAppearance.AppCompat">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/vazir</item>
+        <item name="android:textColor">@color/text_input_layout</item>
+    </style>
+
+    <style name="NavigationViewTransparent" parent="AppTheme">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Toolbar" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+
+    <style name="ToolbarTitleTextSize" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextInputLayout" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textColorHint">@color/text_color_hint_input_layout</item>
+    </style>
+
+    <style name="TextInputLayoutTheme" parent="Theme.AppCompat">
+        <item name="android:colorControlActivated">@color/colorPrimaryDark</item>
+        <item name="android:colorControlNormal">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="TextInputLayoutHint" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_input_layout</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ImageButtonSearchActivity" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:background">@color/search_trips_constraint_background</item>
+    </style>
+
+    <style name="MainTabLayout" parent="Widget.Design.TabLayout">
+        <item name="android:fontFamily">@font/vazir</item>
+    </style>
+
+    <style name="CancelAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/cancel_alert_dialog_background</item>
+    </style>
+
+    <style name="PositiveButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/text_input_layout</item>
+        <item name="android:background">@drawable/positive_button_background</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="NegativeButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/negative_button_text</item>
+        <item name="android:background">@drawable/negative_button_background</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="PayAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/pay_alert_dialog_background</item>
+    </style>
+
+    <style name="CashPayButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/text_input_layout</item>
+        <item name="android:background">@drawable/btn_cash_pay_background</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="WalletPayButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/negative_button_text</item>
+        <item name="android:background">@drawable/btn_wallet_pay_background</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="OnlinePayButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/negative_button_text</item>
+        <item name="android:background">@drawable/btn_online_pay_background</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="WalletAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/wallet_alert_dialog_background</item>
+    </style>
+
+    <style name="SearchTripsAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/search_trips_alert_dialog_background</item>
+    </style>
+
+</resources>

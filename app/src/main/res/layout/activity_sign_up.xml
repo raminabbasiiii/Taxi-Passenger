@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:background="@color/reserve_trip_activity_background">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/reserve_trip_activity_background"
+        tools:context=".Activity.PassengerProfileActivity"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:focusable="true">
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edit_text_in_profile_background"
+            android:drawableEnd="@drawable/account"
+            android:padding="8dp"
+            android:hint="@string/name"
+            android:inputType="text"
+            android:textColor="@color/text_input_layout"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/et_family"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_family"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edit_text_in_profile_background"
+            android:drawableEnd="@drawable/account"
+            android:inputType="text"
+            android:hint="@string/family"
+            android:padding="8dp"
+            android:textColor="@color/text_input_layout"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/et_mobile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_name" />
+
+
+        <EditText
+            android:id="@+id/et_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edit_text_in_profile_background"
+            android:drawableEnd="@drawable/mobile"
+            android:inputType="number"
+            android:hint="@string/mobile"
+            android:padding="8dp"
+            android:textColor="@color/text_input_layout"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/et_mail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_family" />
+
+        <EditText
+            android:id="@+id/et_mail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edit_text_in_profile_background"
+            android:drawableEnd="@drawable/mail"
+            android:inputType="text"
+            android:hint="@string/mail"
+            android:padding="8dp"
+            android:textColor="@color/text_input_layout"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/et_sexuality"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_mobile" />
+
+        <EditText
+            android:id="@+id/et_sexuality"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edit_text_in_profile_background"
+            android:drawableEnd="@drawable/sexuality"
+            android:inputType="text"
+            android:hint="@string/sexuality"
+            android:padding="8dp"
+            android:textColor="@color/text_input_layout"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/et_pass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_mail" />
+
+        <EditText
+            android:id="@+id/et_pass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edit_text_in_profile_background"
+            android:drawableEnd="@drawable/password"
+            android:inputType="text"
+            android:hint="@string/password"
+            android:padding="8dp"
+            android:textColor="@color/text_input_layout"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_sign_up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_sexuality" />
+
+        <Button
+            android:id="@+id/btn_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/btn_sign_up_background"
+            android:gravity="center"
+            android:onClick="btnSignUpOnClick"
+            android:text="@string/sign_up"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_pass" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/reserve_trip_activity_background"
+    tools:context=".Activity.ReserveTripActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/reserve_trip_toolbar"
+        style="@style/Toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/reserve_trip_toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_gravity="center"
+            android:textSize="16sp"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/scroll_reserve"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_reserve_trip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reserve_trip_toolbar"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/reserve_detail_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/btn_reserve_trip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reserve_trip_toolbar">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/driver_picture"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_driver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/tv_driver"
+                android:textColor="@color/text_view_in_registered_trip_recycler"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_car"
+                app:layout_constraintEnd_toStartOf="@+id/tv_driver_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/driver_picture" />
+
+            <TextView
+                android:id="@+id/tv_driver_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:textColor="@color/text_input_layout"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_car_model"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_driver"
+                app:layout_constraintTop_toBottomOf="@+id/driver_picture"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tv_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/tv_car"
+                android:textColor="@color/text_view_in_registered_trip_recycler"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_origin_reserve"
+                app:layout_constraintEnd_toStartOf="@+id/tv_car_model"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_driver" />
+
+            <TextView
+                android:id="@+id/tv_car_model"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:gravity="start"
+                android:textColor="@color/text_input_layout"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_destination_reserve"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_car"
+                app:layout_constraintTop_toBottomOf="@+id/tv_driver_name"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+            <TextView
+                android:id="@+id/tv_origin_reserve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/text_input_layout"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_date_time_movement_reserve"
+                app:layout_constraintEnd_toStartOf="@+id/tv_to_reserve"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_car" />
+
+            <TextView
+                android:id="@+id/tv_to_reserve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:gravity="start"
+                android:text="@string/tv_to"
+                android:textColor="@color/text_view_in_registered_trip_recycler"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_date_time_movement_reserve"
+                app:layout_constraintEnd_toStartOf="@+id/tv_destination_reserve"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_origin_reserve"
+                app:layout_constraintTop_toBottomOf="@+id/tv_car"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tv_destination_reserve"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:gravity="start"
+                android:textColor="@color/text_input_layout"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_date_movement_reserve"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_to_reserve"
+                app:layout_constraintTop_toBottomOf="@+id/tv_car_model" />
+
+            <TextView
+                android:id="@+id/tv_date_time_movement_reserve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/tv_date_time_movement"
+                android:textColor="@color/text_view_in_registered_trip_recycler"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_distance_reserve"
+                app:layout_constraintEnd_toStartOf="@+id/tv_date_movement_reserve"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_origin_reserve" />
+
+            <TextView
+                android:id="@+id/tv_date_movement_reserve"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:gravity="start"
+                android:textColor="@color/text_input_layout"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_number_distance_reserve"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_date_time_movement_reserve"
+                app:layout_constraintTop_toBottomOf="@+id/tv_destination_reserve" />
+
+
+            <TextView
+                android:id="@+id/tv_distance_reserve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/tv_distance"
+                android:textColor="@color/text_view_in_registered_trip_recycler"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_chair_empty_reserve"
+                app:layout_constraintEnd_toStartOf="@+id/tv_number_distance_reserve"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date_time_movement_reserve" />
+
+            <TextView
+                android:id="@+id/tv_number_distance_reserve"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:gravity="start"
+                android:textColor="@color/text_input_layout"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_count_chair_empty_reserve"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_distance_reserve"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date_movement_reserve" />
+
+            <TextView
+                android:id="@+id/tv_chair_empty_reserve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/tv_chair_empty"
+                android:textColor="@color/text_view_in_registered_trip_recycler"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_shipment_reserve"
+                app:layout_constraintEnd_toStartOf="@+id/tv_count_chair_empty_reserve"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_distance_reserve" />
+
+            <TextView
+                android:id="@+id/tv_count_chair_empty_reserve"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:gravity="start"
+                android:textColor="@color/text_input_layout"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_shipment_capacity_reserve"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_chair_empty_reserve"
+                app:layout_constraintTop_toBottomOf="@+id/tv_number_distance_reserve" />
+
+            <TextView
+                android:id="@+id/tv_shipment_reserve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/tv_shipment_capacity"
+                android:textColor="@color/text_view_in_registered_trip_recycler"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_cooler_reserve"
+                app:layout_constraintEnd_toStartOf="@+id/tv_shipment_capacity_reserve"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_chair_empty_reserve" />
+
+            <TextView
+                android:id="@+id/tv_shipment_capacity_reserve"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:gravity="start"
+                android:textColor="@color/text_input_layout"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_have_cooler_reserve"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_shipment_reserve"
+                app:layout_constraintTop_toBottomOf="@+id/tv_count_chair_empty_reserve" />
+
+            <TextView
+                android:id="@+id/tv_cooler_reserve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/tv_cooler"
+                android:textColor="@color/text_view_in_registered_trip_recycler"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_heater_reserve"
+                app:layout_constraintEnd_toStartOf="@+id/tv_have_cooler_reserve"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_shipment_reserve" />
+
+            <TextView
+                android:id="@+id/tv_have_cooler_reserve"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:gravity="start"
+                android:textColor="@color/text_input_layout"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_have_heater_reserve"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_cooler_reserve"
+                app:layout_constraintTop_toBottomOf="@+id/tv_shipment_capacity_reserve" />
+
+            <TextView
+                android:id="@+id/tv_heater_reserve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/tv_heater"
+                android:textColor="@color/text_view_in_registered_trip_recycler"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_stopping_reserve"
+                app:layout_constraintEnd_toStartOf="@+id/tv_have_heater_reserve"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_cooler_reserve" />
+
+            <TextView
+                android:id="@+id/tv_have_heater_reserve"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:gravity="start"
+                android:textColor="@color/text_input_layout"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_stopping_points_reserve"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_heater_reserve"
+                app:layout_constraintTop_toBottomOf="@+id/tv_have_cooler_reserve" />
+
+            <TextView
+                android:id="@+id/tv_stopping_reserve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/stopping"
+                android:textColor="@color/text_view_in_registered_trip_recycler"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_cost_reserve"
+                app:layout_constraintEnd_toStartOf="@+id/tv_stopping_points_reserve"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_heater_reserve" />
+
+            <TextView
+                android:id="@+id/tv_stopping_points_reserve"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:gravity="start"
+                android:textColor="@color/text_input_layout"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_money_reserve"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_stopping_reserve"
+                app:layout_constraintTop_toBottomOf="@+id/tv_have_heater_reserve" />
+
+            <TextView
+                android:id="@+id/tv_cost_reserve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/tv_cost"
+                android:textColor="@color/text_view_in_registered_trip_recycler"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_id"
+                app:layout_constraintEnd_toStartOf="@+id/tv_money_reserve"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_stopping_reserve" />
+
+
+            <TextView
+                android:id="@+id/tv_money_reserve"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:gravity="start"
+                android:textColor="@color/text_input_layout"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_trip_id"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_cost_reserve"
+                app:layout_constraintTop_toBottomOf="@+id/tv_stopping_points_reserve" />
+
+            <TextView
+                android:id="@+id/tv_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/tv_trip_number"
+                android:textColor="@color/text_view_in_registered_trip_recycler"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_trip_id"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_cost_reserve" />
+
+            <TextView
+                android:id="@+id/tv_trip_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="23dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:gravity="start"
+                android:textColor="@color/text_input_layout"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_id"
+                app:layout_constraintTop_toBottomOf="@+id/tv_money_reserve" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_reserve_trip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_reserve_trip_background"
+        android:gravity="center"
+        android:text="@string/btn_reserve_trip"
+        android:textColor="@color/reserve_trip_activity_background"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scroll_reserve" />
+
+</android.support.constraint.ConstraintLayout>
